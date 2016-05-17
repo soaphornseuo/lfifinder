@@ -1,0 +1,10 @@
+#!/usr/bin/python
+import zipfile
+from StringIO import StringIO
+import zlib
+ 
+inMemoryFile = StringIO()
+ 
+zipFile = zipfile.ZipFile(inMemoryFile, 'w', zipfile.ZIP_DEFLATED) 
+zipFile.writestr('./tmp/test.php', '<?php echo \"www.rcesecurity.com\"; ?>')
+zipFile.close()
